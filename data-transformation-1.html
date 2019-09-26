@@ -24,7 +24,7 @@
 <meta name="author" content="HyunChang Byun" />
 
 
-<meta name="date" content="2019-09-26" />
+<meta name="date" content="2019-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -279,20 +279,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.1.1" data-path="modeling.html"><a href="modeling.html#ClassID10-2"><i class="fa fa-check"></i><b>11.1.1</b> Univariate Linear Regression (단변량 선형회기모형)</a></li>
 <li class="chapter" data-level="11.1.2" data-path="modeling.html"><a href="modeling.html#ClassID10-3"><i class="fa fa-check"></i><b>11.1.2</b> Multivariate Linear Regression (다변량 선형회기모형)</a></li>
 <li class="chapter" data-level="11.1.3" data-path="modeling.html"><a href="modeling.html#ClassID10-4"><i class="fa fa-check"></i><b>11.1.3</b> Polynomial Regression (다항 선형회기모형)</a></li>
-<li class="chapter" data-level="11.1.4" data-path="modeling.html"><a href="modeling.html#ClassID10-5"><i class="fa fa-check"></i><b>11.1.4</b> Support Vector Regression</a></li>
-<li class="chapter" data-level="11.1.5" data-path="modeling.html"><a href="modeling.html#ClassID10-6"><i class="fa fa-check"></i><b>11.1.5</b> Decision Tree Regression (결정나무트리 모형)</a></li>
-<li class="chapter" data-level="11.1.6" data-path="modeling.html"><a href="modeling.html#ClassID10-7"><i class="fa fa-check"></i><b>11.1.6</b> Random Forest Regression</a></li>
-<li class="chapter" data-level="11.1.7" data-path="modeling.html"><a href="modeling.html#ClassID10-8"><i class="fa fa-check"></i><b>11.1.7</b> Regression 모형의 성능 측정</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="modeling.html"><a href="modeling.html#ClassID10-9"><i class="fa fa-check"></i><b>11.2</b> Classification Model (분류모형)</a><ul>
 <li class="chapter" data-level="11.2.1" data-path="modeling.html"><a href="modeling.html#ClassID10-10"><i class="fa fa-check"></i><b>11.2.1</b> Logistic Regression</a></li>
 <li class="chapter" data-level="11.2.2" data-path="modeling.html"><a href="modeling.html#ClassID10-17"><i class="fa fa-check"></i><b>11.2.2</b> K-Nearest Neighbors(K-NN)</a></li>
 <li class="chapter" data-level="11.2.3" data-path="modeling.html"><a href="modeling.html#ClassID10-25"><i class="fa fa-check"></i><b>11.2.3</b> Support Vector Machine(SVM)</a></li>
 <li class="chapter" data-level="11.2.4" data-path="modeling.html"><a href="modeling.html#ClassID10-32"><i class="fa fa-check"></i><b>11.2.4</b> Decision Tree Classification</a></li>
-<li class="chapter" data-level="11.2.5" data-path="modeling.html"><a href="modeling.html#ClassID10-36"><i class="fa fa-check"></i><b>11.2.5</b> Random Forest Classfication</a></li>
+<li class="chapter" data-level="11.2.5" data-path="modeling.html"><a href="modeling.html#ClassID10-36"><i class="fa fa-check"></i><b>11.2.5</b> Random Forrest Classfication</a></li>
 </ul></li>
-<li class="chapter" data-level="11.3" data-path="modeling.html"><a href="modeling.html#ClassID10-37"><i class="fa fa-check"></i><b>11.3</b> Clustering Model(군집모형)</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="modeling.html"><a href="modeling.html#ClassID10-38"><i class="fa fa-check"></i><b>11.3.1</b> K-Means Clustering {#ClassID}</a></li>
+<li class="chapter" data-level="11.3" data-path="modeling.html"><a href="modeling.html#clustering--"><i class="fa fa-check"></i><b>11.3</b> Clustering 군집 모델</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="modeling.html"><a href="modeling.html#ClassID10-39"><i class="fa fa-check"></i><b>11.3.1</b> K-Means Clustering {#ClassID}</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="modeling-part-2.html"><a href="modeling-part-2.html"><i class="fa fa-check"></i><b>12</b> Modeling Part 2</a></li>
@@ -834,12 +830,12 @@ x</code></pre></div>
 </tbody>
 </table>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre></div>
-<pre><code>## ── Attaching packages ────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</code></pre>
 <pre><code>## ✔ ggplot2 3.2.1     ✔ purrr   0.3.2
 ## ✔ tibble  2.1.3     ✔ dplyr   0.8.3
 ## ✔ tidyr   1.0.0     ✔ stringr 1.4.0
 ## ✔ readr   1.3.1     ✔ forcats 0.4.0</code></pre>
-<pre><code>## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">&quot;nycflights13&quot;</span>)</code></pre></div>
