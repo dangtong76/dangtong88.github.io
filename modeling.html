@@ -280,17 +280,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.1.1" data-path="modeling.html"><a href="modeling.html#ClassID10-2"><i class="fa fa-check"></i><b>11.1.1</b> Univariate Linear Regression (단변량 선형회기모형)</a></li>
 <li class="chapter" data-level="11.1.2" data-path="modeling.html"><a href="modeling.html#ClassID10-3"><i class="fa fa-check"></i><b>11.1.2</b> Multivariate Linear Regression (다변량 선형회기모형)</a></li>
 <li class="chapter" data-level="11.1.3" data-path="modeling.html"><a href="modeling.html#ClassID10-4"><i class="fa fa-check"></i><b>11.1.3</b> Polynomial Regression (다항 선형회기모형)</a></li>
-<li class="chapter" data-level="11.1.4" data-path="modeling.html"><a href="modeling.html#ClassID10-5"><i class="fa fa-check"></i><b>11.1.4</b> Support Vector Regression</a></li>
-<li class="chapter" data-level="11.1.5" data-path="modeling.html"><a href="modeling.html#ClassID10-6"><i class="fa fa-check"></i><b>11.1.5</b> Decision Tree Regression (결정나무트리 모형)</a></li>
-<li class="chapter" data-level="11.1.6" data-path="modeling.html"><a href="modeling.html#ClassID10-7"><i class="fa fa-check"></i><b>11.1.6</b> Random Forest Regression</a></li>
-<li class="chapter" data-level="11.1.7" data-path="modeling.html"><a href="modeling.html#ClassID10-8"><i class="fa fa-check"></i><b>11.1.7</b> Regression 모형의 성능 측정</a></li>
 </ul></li>
 <li class="chapter" data-level="11.2" data-path="modeling.html"><a href="modeling.html#ClassID10-9"><i class="fa fa-check"></i><b>11.2</b> Classification Model (분류모형)</a><ul>
 <li class="chapter" data-level="11.2.1" data-path="modeling.html"><a href="modeling.html#ClassID10-10"><i class="fa fa-check"></i><b>11.2.1</b> Logistic Regression</a></li>
 <li class="chapter" data-level="11.2.2" data-path="modeling.html"><a href="modeling.html#ClassID10-17"><i class="fa fa-check"></i><b>11.2.2</b> K-Nearest Neighbors(K-NN)</a></li>
 <li class="chapter" data-level="11.2.3" data-path="modeling.html"><a href="modeling.html#ClassID10-25"><i class="fa fa-check"></i><b>11.2.3</b> Support Vector Machine(SVM)</a></li>
 <li class="chapter" data-level="11.2.4" data-path="modeling.html"><a href="modeling.html#ClassID10-32"><i class="fa fa-check"></i><b>11.2.4</b> Decision Tree Classification</a></li>
-<li class="chapter" data-level="11.2.5" data-path="modeling.html"><a href="modeling.html#ClassID10-36"><i class="fa fa-check"></i><b>11.2.5</b> Random Forest Classfication</a></li>
+<li class="chapter" data-level="11.2.5" data-path="modeling.html"><a href="modeling.html#ClassID10-36"><i class="fa fa-check"></i><b>11.2.5</b> Random Forrest Classfication</a></li>
 </ul></li>
 <li class="chapter" data-level="11.3" data-path="modeling.html"><a href="modeling.html#ClassID10-37"><i class="fa fa-check"></i><b>11.3</b> Clustering Model(군집모형)</a><ul>
 <li class="chapter" data-level="11.3.1" data-path="modeling.html"><a href="modeling.html#ClassID10-38"><i class="fa fa-check"></i><b>11.3.1</b> K-Means Clustering {#ClassID}</a></li>
@@ -601,18 +597,6 @@ x_grid =<span class="st"> </span><span class="kw">seq</span>(<span class="kw">mi
 <pre><code>##        1 
 ## 158862.5</code></pre>
 </div>
-<div id="ClassID10-5" class="section level3">
-<h3><span class="header-section-number">11.1.4</span> Support Vector Regression</h3>
-</div>
-<div id="ClassID10-6" class="section level3">
-<h3><span class="header-section-number">11.1.5</span> Decision Tree Regression (결정나무트리 모형)</h3>
-</div>
-<div id="ClassID10-7" class="section level3">
-<h3><span class="header-section-number">11.1.6</span> Random Forest Regression</h3>
-</div>
-<div id="ClassID10-8" class="section level3">
-<h3><span class="header-section-number">11.1.7</span> Regression 모형의 성능 측정</h3>
-</div>
 </div>
 <div id="ClassID10-9" class="section level2">
 <h2><span class="header-section-number">11.2</span> Classification Model (분류모형)</h2>
@@ -897,7 +881,7 @@ perf2 &lt;-<span class="st"> </span><span class="kw">performance</span>(predict2
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;ISLR&#39;</span>,<span class="dt">repos =</span> <span class="st">&#39;http://cran.us.r-project.org&#39;</span>)</code></pre></div>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/qx/j_2_gqz94yg0nsdycn8_rtlm0000gn/T//RtmpN9wUEE/downloaded_packages</code></pre>
+##  /var/folders/qx/j_2_gqz94yg0nsdycn8_rtlm0000gn/T//Rtmpt2mPYg/downloaded_packages</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ISLR)</code></pre></div>
 </div>
 <div id="ClassID10-19" class="section level4">
@@ -1199,8 +1183,50 @@ Grad.Rate Graduation rate</code></pre></li>
 ## Albertson College                  9.4          11   9727        55</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df &lt;-<span class="st"> </span>College</code></pre></div>
 <ul>
-<li>숙식비용 과 졸업 비율을 이용해 사립학교와 공립학교를 구분 해봅니다.</li>
+<li>데이터 분포를 표시해보고, 숙식비용 과 졸업 비율을 이용해 사립학교와 공립학교를 구분 해봅니다.</li>
 </ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;psych&quot;)</span>
+<span class="kw">library</span>(psych)
+
+<span class="kw">describe</span>(df) <span class="co"># psych 에서 제공</span></code></pre></div>
+<pre><code>##             vars   n     mean      sd median  trimmed     mad    min
+## Private*       1 777     1.73    0.45    2.0     1.78    0.00    1.0
+## Apps           2 777  3001.64 3870.20 1558.0  2193.01 1463.33   81.0
+## Accept         3 777  2018.80 2451.11 1110.0  1510.29 1008.17   72.0
+## Enroll         4 777   779.97  929.18  434.0   575.95  354.34   35.0
+## Top10perc      5 777    27.56   17.64   23.0    25.13   13.34    1.0
+## Top25perc      6 777    55.80   19.80   54.0    55.12   20.76    9.0
+## F.Undergrad    7 777  3699.91 4850.42 1707.0  2574.88 1441.09  139.0
+## P.Undergrad    8 777   855.30 1522.43  353.0   536.36  449.23    1.0
+## Outstate       9 777 10440.67 4023.02 9990.0 10181.66 4121.63 2340.0
+## Room.Board    10 777  4357.53 1096.70 4200.0  4301.70 1005.20 1780.0
+## Books         11 777   549.38  165.11  500.0   535.22  148.26   96.0
+## Personal      12 777  1340.64  677.07 1200.0  1268.35  593.04  250.0
+## PhD           13 777    72.66   16.33   75.0    73.92   17.79    8.0
+## Terminal      14 777    79.70   14.72   82.0    81.10   14.83   24.0
+## S.F.Ratio     15 777    14.09    3.96   13.6    13.94    3.41    2.5
+## perc.alumni   16 777    22.74   12.39   21.0    21.86   13.34    0.0
+## Expend        17 777  9660.17 5221.77 8377.0  8823.70 2730.95 3186.0
+## Grad.Rate     18 777    65.46   17.18   65.0    65.60   17.79   10.0
+##                 max   range  skew kurtosis     se
+## Private*        2.0     1.0 -1.02    -0.96   0.02
+## Apps        48094.0 48013.0  3.71    26.52 138.84
+## Accept      26330.0 26258.0  3.40    18.75  87.93
+## Enroll       6392.0  6357.0  2.68     8.74  33.33
+## Top10perc      96.0    95.0  1.41     2.17   0.63
+## Top25perc     100.0    91.0  0.26    -0.57   0.71
+## F.Undergrad 31643.0 31504.0  2.60     7.61 174.01
+## P.Undergrad 21836.0 21835.0  5.67    54.52  54.62
+## Outstate    21700.0 19360.0  0.51    -0.43 144.32
+## Room.Board   8124.0  6344.0  0.48    -0.20  39.34
+## Books        2340.0  2244.0  3.47    28.06   5.92
+## Personal     6800.0  6550.0  1.74     7.04  24.29
+## PhD           103.0    95.0 -0.77     0.54   0.59
+## Terminal      100.0    76.0 -0.81     0.22   0.53
+## S.F.Ratio      39.8    37.3  0.66     2.52   0.14
+## perc.alumni    64.0    64.0  0.60    -0.11   0.44
+## Expend      56233.0 53047.0  3.45    18.59 187.33
+## Grad.Rate     118.0   108.0 -0.11    -0.22   0.62</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>Room.Board,<span class="dt">y=</span>Grad.Rate)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color=</span>Private))</code></pre></div>
 <p><img src="test2_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <ul>
@@ -3556,19 +3582,183 @@ df</code></pre></div>
 <span class="kw">set.seed</span>(<span class="dv">101</span>) 
 
 sample =<span class="st"> </span><span class="kw">sample.split</span>(df<span class="op">$</span>Private, <span class="dt">SplitRatio =</span> <span class="fl">0.70</span>)
-train =<span class="st"> </span><span class="kw">subset</span>(df, sample <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>)
-test =<span class="st"> </span><span class="kw">subset</span>(df, sample <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>)</code></pre></div>
+tree.train.data =<span class="st"> </span><span class="kw">subset</span>(df, sample <span class="op">==</span><span class="st"> </span><span class="ot">TRUE</span>)
+tree.test.data =<span class="st"> </span><span class="kw">subset</span>(df, sample <span class="op">==</span><span class="st"> </span><span class="ot">FALSE</span>)</code></pre></div>
+</div>
+<div id="decision-tree----" class="section level4">
+<h4><span class="header-section-number">11.2.4.4</span> Decision Tree 를 이용한 모델 만들기</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rpart)
+tree.model &lt;-<span class="st"> </span><span class="kw">rpart</span>(Private <span class="op">~</span>.,<span class="dt">method=</span><span class="st">&#39;class&#39;</span>,<span class="dt">data =</span> tree.train.data)
+tree.predict &lt;-<span class="st"> </span><span class="kw">predict</span>(tree.model,tree.test.data )
+<span class="kw">head</span>(tree.predict)</code></pre></div>
+<pre><code>##             No       Yes
+## 3  0.003311258 0.9966887
+## 11 0.003311258 0.9966887
+## 12 0.003311258 0.9966887
+## 13 0.003311258 0.9966887
+## 14 0.003311258 0.9966887
+## 17 0.003311258 0.9966887</code></pre>
+<ul>
+<li>데이터를 보게 되면 사립학교일 확율과 사립학교가 아닐 확율 2가지를 줍니다. 하나로 합쳐 보겠습니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tree.predict &lt;-<span class="st"> </span><span class="kw">as_tibble</span>(tree.predict)
+
+tree.predict &lt;-<span class="st"> </span>tree.predict  <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Private =</span> <span class="kw">ifelse</span>(Yes <span class="op">&gt;=</span><span class="st"> </span><span class="fl">0.5</span>, <span class="st">&#39;Yes&#39;</span>, <span class="st">&#39;No&#39;</span>))
+
+<span class="co"># tree.predict</span></code></pre></div>
+<ul>
+<li>오분류 비율을 출력합니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Confusion Matrix 로 구해보기</span>
+<span class="kw">table</span>(tree.predict<span class="op">$</span>Private,tree.test.data<span class="op">$</span>Private)</code></pre></div>
+<pre><code>##      
+##        No Yes
+##   No   57   9
+##   Yes   7 160</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># 퍼센트로 구해보기 </span>
+misClasificError &lt;-<span class="st"> </span><span class="kw">mean</span>(tree.predict<span class="op">$</span>Private <span class="op">!=</span><span class="st"> </span>tree.test.data<span class="op">$</span>Private)
+
+
+<span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&#39;Accuracy&#39;</span>,<span class="dv">1</span><span class="op">-</span>misClasificError))</code></pre></div>
+<pre><code>## [1] &quot;Accuracy 0.931330472103004&quot;</code></pre>
+</div>
+<div id="dicision-tree---" class="section level4">
+<h4><span class="header-section-number">11.2.4.5</span> dicision tree 모델 시각화 하기</h4>
+<ul>
+<li>rpart 라이브러리 를 이요해서 시각화 합니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;rpart.plot&quot;)</span>
+<span class="kw">library</span>(rpart)
+<span class="kw">library</span>(rpart.plot)
+<span class="kw">prp</span>(tree.model)</code></pre></div>
+<p><img src="test2_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
 </div>
 <div id="ClassID10-36" class="section level3">
-<h3><span class="header-section-number">11.2.5</span> Random Forest Classfication</h3>
+<h3><span class="header-section-number">11.2.5</span> Random Forrest Classfication</h3>
+<ul>
+<li>동일한 데이터셋을 사용해서 Random Forrest 모델을 만들어 봅니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;randomForest&quot;)</span>
+<span class="kw">library</span>(randomForest)
+
+<span class="co"># Decision Tree 와 비교해보세요 </span>
+<span class="co"># tree.model &lt;- rpart(Private ~.,method=&#39;class&#39;,data = tree.train.data)</span>
+randomf.model &lt;-<span class="st"> </span><span class="kw">randomForest</span>(Private <span class="op">~</span><span class="st"> </span>. , <span class="dt">data =</span> tree.train.data,<span class="dt">importance =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div id="---" class="section level4">
+<h4><span class="header-section-number">11.2.5.1</span> 변수 중요도를 확인및 시각화</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(devtools)
+<span class="co">#install_github(&#39;araastat/reprtree&#39;) #devtolls 에서 제공하는 install_github 으로 설치</span>
+
+<span class="co"># Confusion Matrix 확인 (RandomForrest 함수 리턴값에는 confusion Matrix 가 포함되어 있습니다.)</span>
+randomf.model<span class="op">$</span>confusion</code></pre></div>
+<pre><code>##      No Yes class.error
+## No  125  23  0.15540541
+## Yes  10 386  0.02525253</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># 변수 중요도 확인 (RandomForrest 함수 리턴값에 변수중요도 항목이 포함되어 있습니다..)</span>
+randomf.model<span class="op">$</span>importance</code></pre></div>
+<pre><code>##                       No          Yes MeanDecreaseAccuracy
+## Apps        0.0299975940 1.581643e-02         0.0195732992
+## Accept      0.0265169723 1.359972e-02         0.0169830344
+## Enroll      0.0360668986 2.852824e-02         0.0305094654
+## Top10perc   0.0094902570 5.700969e-03         0.0067307985
+## Top25perc   0.0049996299 2.891095e-03         0.0035060616
+## F.Undergrad 0.1591184093 6.945790e-02         0.0937286273
+## P.Undergrad 0.0436610506 7.334280e-03         0.0170748529
+## Outstate    0.1456738704 6.461743e-02         0.0865178571
+## Room.Board  0.0147668601 1.439793e-02         0.0144179025
+## Books       0.0007389787 8.914367e-05         0.0002868557
+## Personal    0.0029767520 8.632755e-04         0.0014664250
+## PhD         0.0086149598 5.320894e-03         0.0061979645
+## Terminal    0.0044437470 6.488106e-03         0.0059953078
+## S.F.Ratio   0.0302010312 8.307646e-03         0.0142830244
+## perc.alumni 0.0166161199 3.455476e-03         0.0071053253
+## Expend      0.0235732631 1.270668e-02         0.0155385819
+## Grad.Rate   0.0149251559 5.575670e-03         0.0080482732
+##             MeanDecreaseGini
+## Apps                9.093474
+## Accept             11.252450
+## Enroll             22.810173
+## Top10perc           5.535670
+## Top25perc           4.568160
+## F.Undergrad        38.842710
+## P.Undergrad        16.934128
+## Outstate           42.669650
+## Room.Board         10.414502
+## Books               2.203342
+## Personal            3.710353
+## PhD                 4.624097
+## Terminal            4.524290
+## S.F.Ratio          16.017899
+## perc.alumni         5.280970
+## Expend              9.860188
+## Grad.Rate           6.520158</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#randomTree &lt;- getTree(randomf.model, 1, labelVar=TRUE)</span>
+
+reprtree<span class="op">:::</span><span class="kw">plot.getTree</span>(randomf.model ) <span class="co"># github에서 다운받은 reptree 함수를 이용해서 트리를 그립니다.</span></code></pre></div>
+<p><img src="test2_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<ul>
+<li>No, Yes 답이 나오는데 기여한 정도 및 Gini 계수 를 보여 줍니다. Gini 계수가 높을수록 의사 결을을 하는데 있어서 중요한 변수(information gain 이 높다) 라고 보면 됩니다. 높은 수치가 나온 변수를 그래프로 그려보면 확연하게 느낄수 있습니다.</li>
+</ul>
+</div>
+<div id="-" class="section level4">
+<h4><span class="header-section-number">11.2.5.2</span> 스코어링 해보기</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">randomt.predict &lt;-<span class="st"> </span><span class="kw">predict</span>(randomf.model,tree.test.data)
+
+<span class="kw">table</span>(randomt.predict ,tree.test.data<span class="op">$</span>Private)</code></pre></div>
+<pre><code>##                
+## randomt.predict  No Yes
+##             No   57   6
+##             Yes   7 163</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">randomt.predict</code></pre></div>
+<pre><code>##   3  11  12  13  14  17  22  23  25  26  30  31  41  43  45  49  54  55 
+## Yes Yes Yes Yes Yes Yes  No Yes Yes  No Yes Yes Yes Yes Yes Yes Yes Yes 
+##  61  64  69  70  72  73  74  77  78  79  80  82  84  85  90  92  94  95 
+## Yes Yes Yes  No Yes Yes Yes Yes Yes  No  No  No Yes Yes Yes Yes Yes Yes 
+##  97 106 107 110 121 122 126 127 128 132 133 134 135 146 158 161 162 164 
+## Yes Yes Yes Yes Yes Yes  No Yes Yes Yes Yes Yes Yes Yes Yes Yes  No Yes 
+## 167 176 181 182 184 186 187 189 192 195 201 202 205 206 208 209 210 211 
+## Yes Yes  No  No Yes Yes Yes Yes Yes Yes Yes  No Yes Yes  No Yes Yes Yes 
+## 212 214 215 231 235 242 244 246 249 256 264 266 267 275 281 285 300 303 
+## Yes Yes Yes Yes Yes Yes Yes  No  No Yes Yes Yes Yes  No  No Yes Yes Yes 
+## 305 306 314 318 319 324 325 328 330 343 344 347 350 354 365 366 368 374 
+## Yes  No Yes Yes Yes Yes  No Yes Yes Yes Yes Yes Yes Yes Yes  No  No Yes 
+## 377 380 381 395 397 399 400 401 402 410 412 418 419 421 425 426 427 432 
+## Yes Yes Yes Yes Yes Yes Yes Yes  No Yes  No  No  No  No Yes Yes Yes Yes 
+## 440 444 446 453 455 456 458 464 468 469 475 480 488 489 490 491 497 499 
+## Yes Yes  No Yes Yes Yes  No Yes Yes Yes Yes Yes Yes Yes  No Yes Yes Yes 
+## 501 503 504 506 511 513 518 519 523 526 527 528 529 530 531 533 537 540 
+## Yes Yes Yes Yes  No Yes Yes Yes Yes Yes Yes Yes Yes  No  No Yes  No Yes 
+## 543 545 546 550 552 558 559 562 563 564 577 578 581 582 583 585 586 588 
+## Yes Yes Yes Yes Yes Yes  No  No  No  No Yes Yes Yes  No Yes Yes  No Yes 
+## 591 594 602 604 605 608 614 619 620 631 632 634 636 638 639 640 642 652 
+## Yes Yes Yes  No  No  No Yes Yes  No Yes Yes  No  No  No  No Yes  No  No 
+## 653 658 660 663 665 667 669 685 688 689 692 694 695 699 711 715 721 724 
+##  No  No  No  No  No Yes Yes  No Yes Yes  No  No  No  No Yes Yes Yes Yes 
+## 729 732 733 740 742 744 746 748 749 755 757 761 765 771 773 774 776 
+## Yes Yes Yes Yes  No  No  No  No Yes Yes Yes Yes Yes Yes  No Yes Yes 
+## Levels: No Yes</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># 오분류 확율 구하기</span>
+misClasificError &lt;-<span class="st"> </span><span class="kw">mean</span>(randomt.predict <span class="op">!=</span><span class="st"> </span>tree.test.data<span class="op">$</span>Private)
+
+<span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&#39;Accuracy&#39;</span>,<span class="dv">1</span><span class="op">-</span>misClasificError))</code></pre></div>
+<pre><code>## [1] &quot;Accuracy 0.944206008583691&quot;</code></pre>
+</div>
 </div>
 </div>
 <div id="ClassID10-37" class="section level2">
 <h2><span class="header-section-number">11.3</span> Clustering Model(군집모형)</h2>
 <div id="ClassID10-38" class="section level3">
 <h3><span class="header-section-number">11.3.1</span> K-Means Clustering {#ClassID}</h3>
+<ul>
+<li>kmeans 클러스터링을 학습하기 위해 컴퓨터 스펙을 바탕으로 컴퓨터들을 분류 해보겠습니다.</li>
+</ul>
+<div id="-" class="section level4">
+<h4><span class="header-section-number">11.3.1.1</span> 데이터 수집</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
 
+</div>
 </div>
 </div>
 </div>
