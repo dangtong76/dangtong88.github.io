@@ -24,7 +24,7 @@
 <meta name="author" content="HyunChang Byun" />
 
 
-<meta name="date" content="2019-09-26" />
+<meta name="date" content="2019-09-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -287,9 +287,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.2.3" data-path="modeling.html"><a href="modeling.html#ClassID10-25"><i class="fa fa-check"></i><b>11.2.3</b> Support Vector Machine(SVM)</a></li>
 <li class="chapter" data-level="11.2.4" data-path="modeling.html"><a href="modeling.html#ClassID10-32"><i class="fa fa-check"></i><b>11.2.4</b> Decision Tree Classification</a></li>
 <li class="chapter" data-level="11.2.5" data-path="modeling.html"><a href="modeling.html#ClassID10-36"><i class="fa fa-check"></i><b>11.2.5</b> Random Forrest Classfication</a></li>
-</ul></li>
-<li class="chapter" data-level="11.3" data-path="modeling.html"><a href="modeling.html#ClassID10-37"><i class="fa fa-check"></i><b>11.3</b> Clustering Model(군집모형)</a><ul>
-<li class="chapter" data-level="11.3.1" data-path="modeling.html"><a href="modeling.html#ClassID10-38"><i class="fa fa-check"></i><b>11.3.1</b> K-Means Clustering {#ClassID}</a></li>
+<li class="chapter" data-level="11.2.6" data-path="modeling.html"><a href="modeling.html#ClassID10-39"><i class="fa fa-check"></i><b>11.2.6</b> K-Means Clustering {#ClassID}</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="modeling-part-2.html"><a href="modeling-part-2.html"><i class="fa fa-check"></i><b>12</b> Modeling Part 2</a></li>
@@ -881,7 +879,7 @@ perf2 &lt;-<span class="st"> </span><span class="kw">performance</span>(predict2
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&#39;ISLR&#39;</span>,<span class="dt">repos =</span> <span class="st">&#39;http://cran.us.r-project.org&#39;</span>)</code></pre></div>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/qx/j_2_gqz94yg0nsdycn8_rtlm0000gn/T//Rtmpt2mPYg/downloaded_packages</code></pre>
+##  /var/folders/qx/j_2_gqz94yg0nsdycn8_rtlm0000gn/T//Rtmp0UwHNx/downloaded_packages</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(ISLR)</code></pre></div>
 </div>
 <div id="ClassID10-19" class="section level4">
@@ -3646,7 +3644,7 @@ misClasificError &lt;-<span class="st"> </span><span class="kw">mean</span>(tree
 <span class="co"># Decision Tree 와 비교해보세요 </span>
 <span class="co"># tree.model &lt;- rpart(Private ~.,method=&#39;class&#39;,data = tree.train.data)</span>
 randomf.model &lt;-<span class="st"> </span><span class="kw">randomForest</span>(Private <span class="op">~</span><span class="st"> </span>. , <span class="dt">data =</span> tree.train.data,<span class="dt">importance =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<div id="---" class="section level4">
+<div id="ClassID10-37" class="section level4">
 <h4><span class="header-section-number">11.2.5.1</span> 변수 중요도를 확인및 시각화</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(devtools)
 <span class="co">#install_github(&#39;araastat/reprtree&#39;) #devtolls 에서 제공하는 install_github 으로 설치</span>
@@ -3702,7 +3700,7 @@ reprtree<span class="op">:::</span><span class="kw">plot.getTree</span>(randomf.
 <li>No, Yes 답이 나오는데 기여한 정도 및 Gini 계수 를 보여 줍니다. Gini 계수가 높을수록 의사 결을을 하는데 있어서 중요한 변수(information gain 이 높다) 라고 보면 됩니다. 높은 수치가 나온 변수를 그래프로 그려보면 확연하게 느낄수 있습니다.</li>
 </ul>
 </div>
-<div id="-" class="section level4">
+<div id="ClassID10-38" class="section level4">
 <h4><span class="header-section-number">11.2.5.2</span> 스코어링 해보기</h4>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">randomt.predict &lt;-<span class="st"> </span><span class="kw">predict</span>(randomf.model,tree.test.data)
 
@@ -3746,17 +3744,93 @@ misClasificError &lt;-<span class="st"> </span><span class="kw">mean</span>(rand
 <pre><code>## [1] &quot;Accuracy 0.944206008583691&quot;</code></pre>
 </div>
 </div>
-</div>
-<div id="ClassID10-37" class="section level2">
-<h2><span class="header-section-number">11.3</span> Clustering Model(군집모형)</h2>
-<div id="ClassID10-38" class="section level3">
-<h3><span class="header-section-number">11.3.1</span> K-Means Clustering {#ClassID}</h3>
+<div id="ClassID10-39" class="section level3">
+<h3><span class="header-section-number">11.2.6</span> K-Means Clustering {#ClassID}</h3>
 <ul>
 <li>kmeans 클러스터링을 학습하기 위해 컴퓨터 스펙을 바탕으로 컴퓨터들을 분류 해보겠습니다.</li>
 </ul>
-<div id="-" class="section level4">
-<h4><span class="header-section-number">11.3.1.1</span> 데이터 수집</h4>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
+<div id="ClassID10-40" class="section level4">
+<h4><span class="header-section-number">11.2.6.1</span> 데이터 수집 및 정규화 (Scaling)</h4>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#install.packages(&quot;animation&quot;)  </span>
+<span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(animation)
+
+<span class="co"># 불필요한 데이터는 제거하고 df 에 저장 합니다.</span>
+computer &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;computers.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(X1,cd, multi, premium)) 
+
+
+scale.computer.df &lt;-<span class="st"> </span>computer  <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">price_scal =</span> <span class="kw">scale</span>(price),
+         <span class="dt">hd_scal =</span> <span class="kw">scale</span>(hd),
+         <span class="dt">ram_scal =</span> <span class="kw">scale</span>(ram),
+         <span class="dt">screen_scal =</span> <span class="kw">scale</span>(screen),
+         <span class="dt">ads_scal =</span> <span class="kw">scale</span>(ads),
+         <span class="dt">trend_scal =</span> <span class="kw">scale</span>(trend))  <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(price, speed, hd, ram, screen, ads, trend)) <span class="co"># 정규화 한 다음 원래 값을 날립니다.</span>
+
+scale.computer.df</code></pre></div>
+<pre><code>## # A tibble: 6,259 x 6
+##    price_scal[,1] hd_scal[,1] ram_scal[,1] screen_scal[,1] ads_scal[,1]
+##             &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;           &lt;dbl&gt;        &lt;dbl&gt;
+##  1       -1.24         -1.30       -0.761           -0.673        -1.70
+##  2       -0.731        -1.28       -1.12            -0.673        -1.70
+##  3       -1.08         -0.954      -0.761            0.432        -1.70
+##  4       -0.638        -0.954      -0.0510          -0.673        -1.70
+##  5        1.85         -0.296       1.37            -0.673        -1.70
+##  6        2.54         -0.296       1.37            -0.673        -1.70
+##  7       -0.860        -0.954      -0.761           -0.673        -1.70
+##  8       -0.387        -1.28       -1.12            -0.673        -1.70
+##  9        0.00934      -0.799      -0.0510          -0.673        -1.70
+## 10        0.612        -0.799      -0.761            0.432        -1.70
+## # … with 6,249 more rows, and 1 more variable: trend_scal[,1] &lt;dbl&gt;</code></pre>
+<ul>
+<li>정규화한 데이터로 animation 을 통해 kmeans clustering 이 어덯게 움직이는지 확인해 보겠습니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2345</span>)
+<span class="kw">kmeans.ani</span>(scale.computer.df[<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>], <span class="dv">4</span>)</code></pre></div>
+<p><img src="test2_files/figure-html/unnamed-chunk-62-1.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-2.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-3.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-4.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-5.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-6.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-7.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-8.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-9.png" width="672" /><img src="test2_files/figure-html/unnamed-chunk-62-10.png" width="672" /></p>
+<ul>
+<li>kmeans 클러스터링 모델을 만들고. 함수의 리턴 속성중에 R스퀘어 합을 가져오는 함수를 만듭니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kmeans.model &lt;-<span class="kw">kmeans</span>(scale.computer.df, <span class="dv">3</span>)
+
+sum.square &lt;-<span class="st"> </span><span class="cf">function</span>(k) {
+  cluster &lt;-<span class="st"> </span><span class="kw">kmeans</span>(scale.computer.df, k)
+  <span class="kw">return</span> (cluster<span class="op">$</span>tot.withinss)
+}
+<span class="co"># 테스트 해봅니다.</span>
+<span class="kw">sum.square</span>(<span class="dv">2</span>)</code></pre></div>
+<pre><code>## [1] 27087.1</code></pre>
+<ul>
+<li>k 의 최대 개수를 정하고, sum.square 함수를 호출해서 모델 빌드를 반복하면서 withinss 값을 저장합니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># k 의 최대 개수를 지정합니다.</span>
+max.k =<span class="st"> </span><span class="dv">20</span> 
+
+<span class="co"># 모델을 20번 만들어서 R스퀘어 값을 저장합니다.</span>
+total.square &lt;-<span class="st"> </span><span class="kw">sapply</span>(<span class="dv">2</span><span class="op">:</span>max.k, sum.square)
+
+<span class="co"># 그래프를 만들 데이터 프레임을 만듭니다.</span>
+elbow &lt;-<span class="kw">data.frame</span>(<span class="dv">2</span><span class="op">:</span>max.k, total.square)
+
+<span class="kw">view</span>(elbow)
+<span class="co"># Plot the graph with gglop</span></code></pre></div>
+<ul>
+<li>최적을 k 값을 찾기 위해 그래프를 그립니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(elbow, <span class="kw">aes</span>(X2.max.k,total.square)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">seq</span>(<span class="dv">1</span>, <span class="dv">20</span>, <span class="dt">by =</span> <span class="dv">1</span>))</code></pre></div>
+<p><img src="test2_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<ul>
+<li>k 값을 7로 하고 다시 모델을 생성 하고, 생성된 클러스터 별로 군집이 몇개인지 확인 합니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">kmeans.model &lt;-<span class="kw">kmeans</span>(scale.computer.df, <span class="dv">7</span>)
+
+kmeans.model<span class="op">$</span>size</code></pre></div>
+<pre><code>## [1]  621  897  594 1856  538 1377  376</code></pre>
 
 </div>
 </div>
