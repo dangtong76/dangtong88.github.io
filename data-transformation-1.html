@@ -350,11 +350,11 @@ dataTI</code></pre></div>
 results</code></pre></div>
 <pre><code>## Unit: milliseconds
 ##                                 expr      min       lq      mean    median
-##                apply(dataTI, 2, sum) 8.776221 9.734516 13.567885 12.133374
-##  summarise(dataTI, sum = sum(value)) 3.333330 3.590247  3.771001  3.701081
+##                apply(dataTI, 2, sum) 8.290361 9.455985 12.912317 11.436209
+##  summarise(dataTI, sum = sum(value)) 3.119908 3.445571  3.648553  3.573717
 ##         uq       max neval
-##  13.683999 71.835673   100
-##   3.908597  4.607878   100</code></pre>
+##  12.883282 67.541408   100
+##   3.737437  4.640405   100</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># 수행 분포를 확인</span>
 <span class="kw">autoplot</span>(results) <span class="co"># 실제 수행 모양</span></code></pre></div>
 <p><img src="test2_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
@@ -1424,6 +1424,30 @@ add10 &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
 ## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
 ## #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
 </div>
+<div id="mutate---conditional-update" class="section level4">
+<h4><span class="header-section-number">7.4.7.3</span> mutate 를 이용한 conditional update</h4>
+<ul>
+<li>mutate 내에 ifelse 문을 사용해서 condition을 지정하고 해당 condition 이 TRUE/FALSE 경우에 대한 로직 또는 값을 입력 할 수 있습니다.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mutate</span>(flights, <span class="dt">dep_delay =</span> <span class="kw">ifelse</span>(dep_delay <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">0</span>))</code></pre></div>
+<pre><code>## # A tibble: 336,776 x 19
+##     year month   day dep_time sched_dep_time dep_delay arr_time
+##    &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;
+##  1  2013     1     1      517            515        10      830
+##  2  2013     1     1      533            529        10      850
+##  3  2013     1     1      542            540        10      923
+##  4  2013     1     1      544            545         0     1004
+##  5  2013     1     1      554            600         0      812
+##  6  2013     1     1      554            558         0      740
+##  7  2013     1     1      555            600         0      913
+##  8  2013     1     1      557            600         0      709
+##  9  2013     1     1      557            600         0      838
+## 10  2013     1     1      558            600         0      753
+## # … with 336,766 more rows, and 12 more variables: sched_arr_time &lt;int&gt;,
+## #   arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
+## #   origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;,
+## #   minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+</div>
 </div>
 <div id="summarize---" class="section level3">
 <h3><span class="header-section-number">7.4.8</span> summarize 로 집계 하기</h3>
@@ -1498,7 +1522,7 @@ delay</code></pre></div>
 <span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">size =</span> count), <span class="dt">alpha =</span> <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="test2_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p><img src="test2_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">delays &lt;-<span class="st"> </span>flights <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">group_by</span>(dest) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">summarise</span>(
